@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="header-parking">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" id="navbar-logo">RIJEKA</a>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-links">Početna</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Atrakcije</a>
+              <div class="sub-menu-1">
+                <ul>
+                  <li>
+                    <a href="korzo-stari-grad.html" class="navbar-sub-links"
+                      >Korzo i stari grad</a
+                    >
+                  </li>
+                  <li>
+                    <a href="susak-trsat.html" class="navbar-sub-links"
+                      >Sušak i Trsat</a
+                    >
+                  </li>
+                  <li>
+                    <a href="rijecki-tunel.html" class="navbar-sub-links"
+                      >Riječki tunel</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Prijevoz</a>
+              <div class="sub-menu-2">
+                <ul>
+                  <li>
+                    <a href="autobusne-linije.html" class="navbar-sub-links"
+                      >Autobusne linije</a
+                    >
+                  </li>
+                  <li>
+                    <a href="parking.html" class="navbar-sub-links">Parking</a>
+                  </li>
+                  <li>
+                    <a href="prijevoz.html" class="navbar-sub-links">Stanje u prometu</a>
+                  </li>
+                </ul>
+              </div>
+            <li class="navbar-item">
+              <a href="hoteli.html" class="navbar-links">Hoteli</a>
+            </li>
+                        
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Zabava</a>
+              <div class="sub-menu-4">
+                <ul>
+                  <li>
+                    <a href="karneval.html" class="navbar-sub-links"
+                      >Karneval</a
+                    >
+                  </li>
+                  <li>
+                    <a href="gastronomija.html" class="navbar-sub-links"
+                      >Gastronomija</a
+                    >
+                  </li>
+                  <li>
+                    <a href="plaze.html" class="navbar-sub-links">Plaže</a>
+                  </li>
+                  <li>
+                    <a href="shopping.html" class="navbar-sub-links"
+                      >Shopping</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="vrijeme.html" class="navbar-links">Vrijeme</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="text-box">
+        <h1 class="title">Parking</h1>
+    </section>
+    <section class="rijeka">
+        <div class="row">
+            <div class="column">
+              <div class="card">
+    <h1>Dostupnost parkinga - Rijeka Plus</h1>
+    <button id="gumb" class="gumb">Klikni me!</button>
+    <div id="parking"></div>
+
+    <script>
+      document.getElementById("gumb").addEventListener("click", async () => {
+        try {
+          const response = await fetch("http://localhost:3000/dostupnost");
+          if (!response.ok) {
+            throw new Error("Greška u dohvatu podataka");
+          }
+          const data = await response.json();
+          console.log("Dohvaćeni podaci:", data); // Debug ispis
+
+          // pretvoreno u glavni okvir koji će obuhvatiti sve rezultate koje ćemo napuniti
+          //i dalje punimo podatke ovdje
+          let parkingHTML = `<div style="border:2px solid black; padding:10px; margin:5px;">`;
+
+          for (let i = 0; i < data.length; i++) {
+            let parking = data[i];
+
+            if (!parking.parking_name || !parking.parking_data?.kapacitet) {
+              continue; //preskače podatke koji nemaju upisan naziv ili kapacitet
+            }
+
+            parkingHTML += `
+      <div> 
+          <h2>Parking: ${parking.parking_name}</h2>
+          <h3>Kapacitet: ${parking.parking_data.kapacitet}</h3>
+          <h3>Slobodno: ${parking.parking_data.slobodno}</h3>
+          <p>Vrijeme preuzimanja podataka: 
+              ${parking.parking_data.last_update_date} 
+              ${parking.parking_data.last_update_time}
+          </p>
+      </div>
+  `;
+          }
+
+          parkingHTML += `</div>`; // Zatvaranje glavnog okvira // Prazan string koji ćemo popunjavati
+
+          if (parkingHTML === "") {
+            // ako su svi podaci unutar sustava null onda prikaži..
+            parkingHTML =
+              "<p>Nema dostupnih parkirališta s valjanim podacima.</p>";
+          }
+
+          document.getElementById("parking").innerHTML = parkingHTML;
+        } catch (error) {
+          document.getElementById("parking").innerText =
+            "Greška: " + error.message;
+        }
+      });
+    </script>
+     </div>
+    </div>
+</div>
+</section>
+    <footer>
+      <p>
+        &copy; Projektni praktikum 2025 &copy; <br />
+        Eda Calderini Živanović & Gabriela Svalina
+      </p>
+    </footer>
+  </body>
+</html>

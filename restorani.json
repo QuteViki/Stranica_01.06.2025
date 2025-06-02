@@ -1,0 +1,66 @@
+[
+  {
+    "naziv": "Restaurant Spagho",
+    "tip": "Restoran",
+    "adresa": "Verdijeva 7B, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Sub: 12:00–23:00; Ned: Zatvoreno",
+    "ocjena": 4.6,
+    "web": "https://spagho.business.site"
+  },
+  {
+    "naziv": "Maslina na Zelenom trgu",
+    "tip": "Restoran",
+    "adresa": "Trg 128. brigade HV 1, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Sub: 11:00–23:00; Ned: 12:00–22:00",
+    "ocjena": 4.7,
+    "web": "https://www.facebook.com/maslinarijeka"
+  },
+  {
+    "naziv": "Kosi Toranj",
+    "tip": "Pizzeria & Restoran",
+    "adresa": "Dolac 8, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Ned: 10:00–23:00",
+    "ocjena": 4.4,
+    "web": null
+  },
+  {
+    "naziv": "Tapas Bar Pet Jedan",
+    "tip": "Tapas Bar",
+    "adresa": "Trg Riječke rezolucije 5, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Sub: 10:00–00:00; Ned: 16:00–23:00",
+    "ocjena": 4.6,
+    "web": "https://www.facebook.com/petjedan/"
+  },
+  {
+    "naziv": "King's Caffe Food Pub",
+    "tip": "Pub & Restoran",
+    "adresa": "Andrije Medulića 5A, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Ned: 09:00–00:00",
+    "ocjena": 4.5,
+    "web": "https://www.kingscaffe.com"
+  },
+  {
+    "naziv": "Bistro Mornar",
+    "tip": "Bistro",
+    "adresa": "Demetrova 2, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Pet: 08:00–22:00; Sub: 09:00–17:00; Ned: Zatvoreno",
+    "ocjena": 4.3,
+    "web": "https://www.facebook.com/mornarbistro/"
+  },
+  {
+    "naziv": "Mano Restaurant & Bar",
+    "tip": "Restoran",
+    "adresa": "Riva 8, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Sub: 12:00–00:00; Ned: 12:00–22:00",
+    "ocjena": 4.7,
+    "web": "https://www.manorijeka.com"
+  },
+  {
+    "naziv": "Buffet Cocco",
+    "tip": "Buffet",
+    "adresa": "Ivana Zajca 24, 51000 Rijeka",
+    "radno_vrijeme": "Pon–Pet: 08:00–16:00; Vikend: Zatvoreno",
+    "ocjena": 4.2,
+    "web": "https://www.facebook.com/BuffetCoccoRijeka/"
+  }
+]

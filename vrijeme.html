@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="header-vrijeme">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" id="navbar-logo">RIJEKA</a>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-links">Početna</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Atrakcije</a>
+              <div class="sub-menu-1">
+                <ul>
+                  <li>
+                    <a href="korzo-stari-grad.html" class="navbar-sub-links"
+                      >Korzo i stari grad</a
+                    >
+                  </li>
+                  <li>
+                    <a href="susak-trsat.html" class="navbar-sub-links"
+                      >Sušak i Trsat</a
+                    >
+                  </li>
+                  <li>
+                    <a href="rijecki-tunel.html" class="navbar-sub-links"
+                      >Riječki tunel</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Prijevoz</a>
+              <div class="sub-menu-2">
+                <ul>
+                  <li>
+                    <a href="autobusne-linije.html" class="navbar-sub-links"
+                      >Autobusne linije</a
+                    >
+                  </li>
+                  <li>
+                    <a href="parking.html" class="navbar-sub-links">Parking</a>
+                  </li>
+                  <li>
+                    <a href="prijevoz.html" class="navbar-sub-links"
+                      >Stanje u prometu</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="navbar-item">
+              <a href="hoteli.html" class="navbar-links">Hoteli</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Zabava</a>
+              <div class="sub-menu-4">
+                <ul>
+                  <li>
+                    <a href="karneval.html" class="navbar-sub-links"
+                      >Karneval</a
+                    >
+                  </li>
+                  <li>
+                    <a href="gastronomija.html" class="navbar-sub-links"
+                      >Gastronomija</a
+                    >
+                  </li>
+                  <li>
+                    <a href="plaze.html" class="navbar-sub-links">Plaže</a>
+                  </li>
+                  <li>
+                    <a href="shopping.html" class="navbar-sub-links"
+                      >Shopping</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="vrijeme.html" class="navbar-links">Vrijeme</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="text-box">
+        <h1 class="title">Vrijeme</h1>
+      </div>
+    </section>
+
+    <section class="rijeka">
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <h2>Trenutno vrijeme</h2>
+            <div class="forecast" id="trenutno-vrijeme"></div>
+
+            <hr />
+
+            <h2>3-dnevna prognoza za Rijeku</h2>
+            <div class="forecast" id="prognoza"></div>
+
+            <script>
+              async function getCurrentWeather() {
+                try {
+                  const odgovor = await fetch("http://localhost:3000/vrijeme");
+                  if (!odgovor.ok)
+                    throw new Error("Ne mogu dohvatiti trenutno vrijeme.");
+
+                  const podaci = await odgovor.json();
+
+                  const html = `
+            <div class="dan">
+              <p><strong>Danas</strong></p>
+              <img src="${podaci.ikona}" alt="${podaci.uvjeti}" />
+              <p>${podaci.temperatura}°C</p>
+              <p>${podaci.uvjeti}</p>
+            </div>
+          `;
+
+                  document.getElementById("trenutno-vrijeme").innerHTML = html;
+                } catch (error) {
+                  document.getElementById(
+                    "trenutno-vrijeme"
+                  ).innerHTML = `<p style="color: red;">${error.message}</p>`;
+                }
+              }
+
+              async function getForecast() {
+                try {
+                  const odgovor = await fetch(
+                    "http://localhost:3000/prognoza3"
+                  );
+                  if (!odgovor.ok)
+                    throw new Error("Ne mogu dohvatiti prognozu.");
+
+                  const podaci = await odgovor.json();
+
+                  let html = "";
+                  podaci.forEach((dan) => {
+                    html += `
+              <div class="dan">
+                <p><strong>${dan.datum}</strong></p>
+                <img src="${dan.ikona}" alt="${dan.uvjeti}" />
+                <p>${dan.temperatura}°C</p>
+                <p>${dan.uvjeti}</p>
+              </div>
+            `;
+                  });
+
+                  document.getElementById("prognoza").innerHTML = html;
+                } catch (error) {
+                  document.getElementById(
+                    "prognoza"
+                  ).innerHTML = `<p style="color: red;">${error.message}</p>`;
+                }
+              }
+
+              document.addEventListener("DOMContentLoaded", () => {
+                getCurrentWeather();
+                getForecast();
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>
+        &copy; Projektni praktikum 2025 &copy; <br />
+        Eda Calderini Živanović & Gabriela Svalina
+      </p>
+    </footer>
+  </body>
+</html>

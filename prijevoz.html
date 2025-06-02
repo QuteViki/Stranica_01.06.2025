@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rijeka</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="header">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="index.html" id="navbar-logo">RIJEKA</a>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-links">Početna</a>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Atrakcije</a>
+              <div class="sub-menu-1">
+                <ul>
+                  <li>
+                    <a href="korzo-stari-grad.html" class="navbar-sub-links"
+                      >Korzo i stari grad</a
+                    >
+                  </li>
+                  <li>
+                    <a href="susak-trsat.html" class="navbar-sub-links"
+                      >Sušak i Trsat</a
+                    >
+                  </li>
+                  <li>
+                    <a href="rijecki-tunel.html" class="navbar-sub-links"
+                      >Riječki tunel</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Prijevoz</a>
+              <div class="sub-menu-2">
+                <ul>
+                  <li>
+                    <a href="autobusne-linije.html" class="navbar-sub-links"
+                      >Autobusne linije</a
+                    >
+                  </li>
+                  <li>
+                    <a href="parking.html" class="navbar-sub-links">Parking</a>
+                  </li>
+                  <li>
+                    <a href="prijevoz.html" class="navbar-sub-links"
+                      >Stanje u prometu</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="navbar-item">
+              <a href="hoteli.html" class="navbar-links">Hoteli</a>
+            </li>
+
+            <li class="navbar-item">
+              <a href="#" class="navbar-links">Zabava</a>
+              <div class="sub-menu-4">
+                <ul>
+                  <li>
+                    <a href="karneval.html" class="navbar-sub-links"
+                      >Karneval</a
+                    >
+                  </li>
+                  <li>
+                    <a href="gastronomija.html" class="navbar-sub-links"
+                      >Gastronomija</a
+                    >
+                  </li>
+                  <li>
+                    <a href="plaze.html" class="navbar-sub-links">Plaže</a>
+                  </li>
+                  <li>
+                    <a href="shopping.html" class="navbar-sub-links"
+                      >Shopping</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a href="vrijeme.html" class="navbar-links">Vrijeme</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="text-box">
+        <h1 class="title">Dobrodošli u Rijeku</h1>
+        <h2 class="title2">Grad koji teče</h2>
+        <a href="rijeka.html" class="hero-btn">Saznaj više</a>
+      </div>
+    </section>
+    <main>
+      <h1>Prijevoz Grada Rijeke</h1>
+      <article id="promet-info">
+        <h2>Trenutno stanje prohodnosti cesta:</h2>
+        <div id="promet-podaci">Učitavanje...</div>
+      </article>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const container = document.getElementById("promet-podaci");
+
+        try {
+          const res = await fetch("http://localhost:3000/promet");
+          const podaci = await res.json();
+
+          container.innerHTML = ""; // isprazni "Učitavanje..."
+
+          if (Array.isArray(podaci) && podaci.length > 0) {
+            podaci.forEach((info) => {
+              const p = document.createElement("div");
+              p.classList.add("promet-item");
+              p.textContent = info;
+              container.appendChild(p);
+            });
+          } else {
+            container.textContent = "Nema dostupnih informacija za Rijeku.";
+          }
+        } catch (err) {
+          container.textContent = "Greška kod učitavanja prometa.";
+          console.error(err);
+        }
+      });
+    </script>
+
+    <footer>
+      <p>
+        &copy; Projektni praktikum 2025 &copy; <br />
+        Eda Calderini Živanović & Gabriela Svalina
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

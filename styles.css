@@ -1,0 +1,493 @@
+* {
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.header-rijeka,
+.header-korzo-stari-grad,
+.header-rijecki-tunel,
+.header-susak-trsat,
+.header-autobusne-linije,
+.header-parking,
+.header-hoteli,
+.header-luksuzni-hoteli,
+.header-karneval,
+.header-gastronomija,
+.header-plaze,
+.header-shopping,
+.header-vrijeme {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Različite visine */
+.header {
+  min-height: 100vh;
+}
+
+.header-rijeka,
+.header-korzo-stari-grad,
+.header-rijecki-tunel,
+.header-susak-trsat,
+.header-autobusne-linije,
+.header-parking,
+.header-hoteli,
+.header-luksuzni-hoteli,
+.header-karneval,
+.header-gastronomija,
+.header-plaze,
+.header-shopping,
+.header-vrijeme {
+  min-height: 70vh;
+}
+
+/* Specifične slike */
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/background2.jpg);
+}
+.header-rijeka {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/rijeka.jpg);
+}
+.header-korzo-stari-grad {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/korzo4.jpg);
+}
+.header-rijecki-tunel {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/rijecki-tunel.jpg);
+}
+.header-susak-trsat {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/trsat.jpg);
+}
+.header-autobusne-linije {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/background2.jpg);
+}
+.header-parking {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/parkiraliste.jpg);
+}
+.header-hoteli {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/hotel2.jpg);
+}
+.header-luksuzni-hoteli {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/hotel1.jpg);
+}
+.header-karneval {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/karneval1.jpg);
+}
+.header-gastronomija {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/gastronomija1.jpg);
+}
+.header-plaze {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/plaže1.jpg);
+}
+.header-shopping {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/shopping3.jpg);
+}
+.header-vrijeme {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(images/vrijeme.jpg);
+}
+
+/* Navigacija */
+.navbar,
+.sub-menu-1,
+.sub-menu-2,
+.sub-menu-3,
+.sub-menu-4,
+footer {
+  background: hsl(205, 77%, 78%);
+}
+
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+  position: relative;
+}
+
+#navbar-logo {
+  background-image: linear-gradient(to top, #0a0f4e 0%, #7281d8 100%);
+  background-size: 100%;
+
+  -webkit-background-clip: text; 
+  background-clip: text; 
+
+  -webkit-text-fill-color: transparent; 
+
+  text-decoration: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar-item {
+  position: relative;
+  height: 80px;
+}
+
+.navbar-links {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.navbar-links:hover {
+  color: #0a0f4e;
+  transition: all 0.3s ease;
+}
+
+/* Submeni zajedničke */
+.sub-menu-1,
+.sub-menu-2,
+.sub-menu-3,
+.sub-menu-4 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 8px;
+  padding: 10px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu-1 ul,
+.sub-menu-2 ul,
+.sub-menu-3 ul,
+.sub-menu-4 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sub-menu-1 li,
+.sub-menu-2 li,
+.sub-menu-3 li,
+.sub-menu-4 li {
+  padding: 10px 20px;
+}
+
+.sub-menu-1 li a,
+.sub-menu-2 li a,
+.sub-menu-3 li a,
+.sub-menu-4 li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sub-menu-1 li a:hover,
+.sub-menu-2 li a:hover,
+.sub-menu-3 li a:hover,
+.sub-menu-4 li a:hover {
+  color: #0a0f4e;
+}
+
+.navbar-item:hover .sub-menu-1,
+.navbar-item:hover .sub-menu-2,
+.navbar-item:hover .sub-menu-3,
+.navbar-item:hover .sub-menu-4 {
+  display: block;
+}
+
+/* Footer */
+footer {
+  color: #192486;
+  text-align: center;
+  height: 3rem;
+}
+
+/* Ostali elementi */
+.text-box {
+  width: 90%;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+.text-box h2 {
+  font-size: 42px;
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 30px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  margin: 20px;
+}
+
+.hero-btn:hover {
+  border: 1px solid #7281d8;
+  background: #7281d8;
+  transition: 1s;
+}
+
+/* Sekcije (atrakcije, zabava, smještaj, rijeka) */
+.atrakcije,
+.zabava,
+.smjestaj
+{
+  padding-top: 50px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Naslovi i tekst */
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+/* Ostali stilovi za galerije i layout */
+
+.atrakcije-col,
+.zabava-col {
+  border-radius: 10px;
+  height: 100%;
+}
+
+.atrakcije-col {
+  flex-basis: 31%;
+  background: #e1eef0;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+}
+
+.atrakcije-col:hover,
+.smjestaj-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.atrakcije-col img,
+.smjestaj-col img,
+.zabava-col img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+.slika {
+  width: 50%;
+  border-radius: 10px;
+  justify-content: center;
+}
+.smjestaj-col {
+  flex-basis: 45%;
+  margin-bottom: 5%;
+  text-align: center;
+  justify-content: center;
+}
+.smjestaj .row {
+  justify-content: center;
+}
+
+.smjestaj-col h3 {
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.zabava-col {
+  flex-basis: 42%;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.layer {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.layer:hover {
+  background: rgba(225, 238, 240, 0.7);
+}
+
+.layer h3 {
+  width: 100%;
+  font-weight: 500;
+  color: #192486;
+  font-size: 26px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+/* Rijeka sekcija */
+
+.rijeka {
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  float: none;
+  width: 100%;
+}
+.card {
+  background-color: rgba(219, 237, 240, 0.7);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.card p {
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.card h2 {
+  font-size: 40px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Vrijeme - prognoza */
+.forecast {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.dan {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 15rem;
+  background-color: #a9d8edd2;
+}
+.placeholderimg {
+  width: 5rem;
+}
+
+#promet-info {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#promet-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.promet-item {
+  background-color: #e6f2f5;
+  border-left: 5px solid #192486;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 omjer */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
