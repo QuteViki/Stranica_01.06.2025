@@ -1,5 +1,8 @@
 # Stranica_01.06.2025
-Website for tourists about Rijeka - all in one place. *** VAŽNO - IMPORTANT *** ⚠️ Pravna napomena Ovaj projekt je izrađen isključivo u edukativne svrhe u sklopu stručne prakse i nije namijenjen za komercijalnu upotrebu niti javnu distribuciju.
+Website for tourists about Rijeka - all in one place.
+*** VAŽNO - IMPORTANT *** 
+⚠️ Pravna napomena 
+Ovaj projekt je izrađen isključivo u edukativne svrhe u sklopu stručne prakse i nije namijenjen za komercijalnu upotrebu niti javnu distribuciju.
 
 U projektu se koristi web scraping kako bi se prikazali podaci sa određenih javno dostupnih web stranica. Sve implementacije scrapinga služe isključivo kao tehnički primjer i nisu automatizirane na način koji bi mogao opteretiti vanjske servise. Prilikom izrade korištene su samo one stranice koje ne navode eksplicitnu zabranu scrapinga u robots.txt datoteci, no unatoč tome, svjestan/svjesna sam mogućih pravnih ograničenja.
 
